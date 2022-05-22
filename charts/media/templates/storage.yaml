@@ -1,0 +1,28 @@
+{{ range .Values.volumes }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: "{{ .name }}"
+spec:
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: "{{ .storageCapacity }}"
+  accessModes: {{ .accessModes }}
+  nfs:
+    server: "{{ $.Values.nfsHost }}"
+    path: "{{ .nfsPath }}"
+  mountOptions: {{ $.Values.nfs.mountOptions }}
+---
+apiVersion : v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "{{ .name }}"
+spec:
+  accessModes: {{ .accessModes }}
+  storageClassName: ""
+  resources:
+    requests:
+      storage: "{{ .storageCapacity }}"
+  volumeName: "{{ .name }}"
+{{ end }}

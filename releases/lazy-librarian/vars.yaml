@@ -1,0 +1,16 @@
+image:
+  repository: lscr.io/linuxserver/lazylibrarian
+  pullPolicy: IfNotPresent
+  tag: 1f882656-ls59
+
+servicePorts:
+  - name: http
+    protocol: TCP
+    port: 5299
+    targetPort: 5299
+replicaCount: 1
+
+appEnv:
+  DOCKER_MODS: linuxserver/calibre-web:calibre
+
+ingressEnabled: true

@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "media.fullname" . }}
+  labels:
+    {{- include "media.labels" . | nindent 4 }}
+  {{- if and .Values.serviceIP (not .Values.ingressEnabled) }}
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: {{ .Values.serviceIP }}
+  {{- end }}
+spec:
+  ports:
+  {{- toYaml .Values.servicePorts | nindent 4}}
+  selector:
+    {{- include "media.selectorLabels" . | nindent 4 }}
+  {{- if not .Values.ingressEnabled }}
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  {{ end }}

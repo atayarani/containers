@@ -1,0 +1,11 @@
+nfs:
+  mountOptions:
+    - "nfsvers=4.1"
+
+ingressEnabled: false
+serviceType: LoadBalancer
+
+commonEnv:
+  PGID: !!str 100
+  PUID: !!str 1026
+  TZ: "Etc/UTC"
