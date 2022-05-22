@@ -1,0 +1,102 @@
+apiVersion: v1
+entries:
+  calibre:
+  - apiVersion: v2
+    appVersion: v5.42.0-ls161
+    created: "2022-05-22T12:33:53.167194-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 2ed9dc29833d1223ddf9208cb241971d1d83e601e4e13d3305eeb7c9f904f77b
+    name: calibre
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/calibre-0.1.0/calibre-0.1.0.tgz
+    version: 0.1.0
+  indexer:
+  - apiVersion: v2
+    appVersion: 0.3.0.1730
+    created: "2022-05-22T12:33:53.331215-07:00"
+    description: A Helm chart for Kubernetes
+    digest: fb0a05c624fb550ab20c9e86d89ed756d7878947ee840cd81c3137d6aa9ca6f7
+    name: indexer
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/indexer-0.1.0/indexer-0.1.0.tgz
+    version: 0.1.0
+  movies:
+  - apiVersion: v2
+    appVersion: 4.1.0.6175
+    created: "2022-05-22T12:33:53.490679-07:00"
+    description: A Helm chart for Kubernetes
+    digest: e50f1d7cffc1e7fec606db5fc1a9e89240d48f418a936fab216170a0ed1321c8
+    name: movies
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/movies-0.1.1/movies-0.1.1.tgz
+    version: 0.1.1
+  music:
+  - apiVersion: v2
+    appVersion: 0.8.1.2135-ls84
+    created: "2022-05-22T12:33:53.650457-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 661e9350f12986d4a218d8c44fc11c730aa1bbbb55cb8693cd2caba446e75a31
+    name: music
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/music-0.1.1/music-0.1.1.tgz
+    version: 0.1.1
+  plex-media-server:
+  - apiVersion: v2
+    appVersion: 1.26.1.5798-99a4a6ac9-ls115
+    created: "2022-05-22T12:33:53.811308-07:00"
+    description: Plex Media Server
+    digest: 4b23bfd41ac26d63108515d444a1187d8a0aa8ef0bc4f74ffc4a05ca6c472382
+    name: plex-media-server
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/plex-media-server-0.1.1/plex-media-server-0.1.1.tgz
+    version: 0.1.1
+  readarr:
+  - apiVersion: v2
+    appVersion: develop-0.1.1.1320-ls11
+    created: "2022-05-22T12:33:53.979416-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 6317948d2df075a758133bc79dba8e16a5605e4acfd96b5e7074d86f2c215b11
+    name: readarr
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/readarr-0.1.0/readarr-0.1.0.tgz
+    version: 0.1.0
+  subtitles:
+  - apiVersion: v2
+    appVersion: v1.0.4-ls155
+    created: "2022-05-22T12:33:54.1376-07:00"
+    description: Bazaar
+    digest: 5b253dd579609c15ced74788900631aabe683daf5cdcada3e9e7915b7d2f92ad
+    name: subtitles
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/subtitles-0.1.0/subtitles-0.1.0.tgz
+    version: 0.1.0
+  transmission:
+  - apiVersion: v2
+    appVersion: 3.00-r5
+    created: "2022-05-22T12:33:54.290371-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 01c45a32f96255ca14d93ba3a064d3104dd0cc711c26bf197660182101a97498
+    name: transmission
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/transmission-0.1.0/transmission-0.1.0.tgz
+    version: 0.1.0
+  tv:
+  - apiVersion: v2
+    appVersion: 3.0.8.1507
+    created: "2022-05-22T12:33:54.462638-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 8e06ea1fac4a538991696610b8f07f493a5909ad8e2b8ec4f5156f2c8e0c2f0c
+    name: tv
+    type: application
+    urls:
+    - https://github.com/ChronoSerrano/helm/releases/download/tv-0.1.0/tv-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-05-22T12:33:54.462658-07:00"
