@@ -1,7 +1,6 @@
 image:
   repository: lscr.io/linuxserver/lazylibrarian
-  pullPolicy: IfNotPresent
-  tag: 1f882656-ls59
+  tag: latest
 
 servicePorts:
   - name: http
@@ -9,8 +8,10 @@ servicePorts:
     port: 5299
     targetPort: 5299
 replicaCount: 1
+ingressHost: lazy-librarian.home.tayarani.net
 
 appEnv:
   DOCKER_MODS: linuxserver/calibre-web:calibre
 
-ingressEnabled: true
+serviceName: lazy-librarian
+servicePort: 5299

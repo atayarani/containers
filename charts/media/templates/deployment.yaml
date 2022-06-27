@@ -20,24 +20,22 @@ spec:
       labels:
         {{- include "media.selectorLabels" . | nindent 8 }}
     spec:
+      hostNetwork: {{ .Values.hostNetwork }}
       containers:
-        - env:
-            {{- range $k, $v := .Values.commonEnv }}
-            - name: {{ $k }}
-              value: {{ $v | toYaml }}
-            {{- end }}
-            {{- range $k, $v := .Values.appEnv }}
-            - name: {{ $k }}
-              value: {{ $v | toYaml }}
-            {{- end }}
+        - name: {{ .Chart.Name }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "media.fullname" . }}
           {{- with .Values.image }}
           image: "{{ .repository }}:{{ .tag | default $.Chart.AppVersion }}"
+          imagePullPolicy: {{ .pullPolicy }}
           {{ end -}}
-          name: {{ .Chart.Name }}
+          {{- if not .Values.hostNetwork }}
           ports:
           {{- range .Values.servicePorts }}
             - containerPort: {{ .targetPort -}}
           {{ end }}
+          {{- end }}
           volumeMounts:
             {{- range .Values.volumes }}
             - name: "{{ .name }}"

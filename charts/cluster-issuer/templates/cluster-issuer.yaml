@@ -1,0 +1,23 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: zerossl-prod
+spec:
+  acme:
+    # The ACME server URL
+    server: {{ .Values.acme_url }}
+    externalAccountBinding:
+      keyID: {{ .Values.eab.kid }}
+      keySecretRef:
+        name: zerossl-eab
+        key: secret
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: zerossl-prod
+    solvers:
+      - dns01:
+          # Replace the section below with your DNS01 provider
+          cloudflare:
+            apiTokenSecretRef:
+              name: cloudflare-api-token
+              key: api-token

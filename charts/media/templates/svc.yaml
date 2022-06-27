@@ -13,7 +13,7 @@ spec:
   {{- toYaml .Values.servicePorts | nindent 4}}
   selector:
     {{- include "media.selectorLabels" . | nindent 4 }}
-  {{- if not .Values.ingressEnabled }}
+  {{- if and (not .Values.ingressEnabled) (not .Values.hostNetwork) }}
   type: LoadBalancer
   externalTrafficPolicy: Cluster
   {{ end }}

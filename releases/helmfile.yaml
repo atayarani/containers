@@ -1,3 +1,7 @@
+repositories:
+  - name: jetstack
+    url: https://charts.jetstack.io
+
 templates:
   default: &default
     namespace: media
@@ -24,3 +28,20 @@ releases:
     <<: *default
   - name: lazy-librarian
     <<: *default
+  - name: cert-manager
+    chart: jetstack/cert-manager
+    createNamespace: true
+    namespace: cert-manager
+    version: v1.8.2
+    values:
+      - ./{{`{{ .Release.Name }}`}}/vars.yaml
+  - name: cluster-issuer
+    chart: ../charts/cluster-issuer
+    values:
+      - ./{{`{{ .Release.Name }}`}}/vars.yaml
+      - ./{{`{{ .Release.Name }}`}}/encrypted.yaml
+  - name: media-ingress
+    <<: *default
+    chart: ../charts/media-ingress
+    values:
+      - ./{{`{{ .Release.Name }}`}}/vars.yaml

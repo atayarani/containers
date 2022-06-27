@@ -1,0 +1,20 @@
+{{- if .Values.ingressEnabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Release.Name }}-ingress
+  namespace: traefik
+spec:
+  entryPoints:
+    - traefik
+    - web
+  routes:
+    - match: PathPrefix(`/{{ .Release.Name }}`)
+      kind: Rule
+      services:
+        - name: {{ include "media.fullname" . }}
+          namespace: {{ .Release.Namespace }}
+          {{- range .Values.servicePorts }}
+          port: {{ .targetPort }}
+          {{- end }}
+{{ end }}

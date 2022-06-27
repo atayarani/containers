@@ -1,0 +1,19 @@
+name: media-ingress
+clusterIssuerName: "zerossl-prod"
+tls:
+  - hosts: [ "media.home.tayarani.net" ]
+    secretName: media-home-tayarani-tls
+ingressHost: "media.home.tayarani.net"
+services:
+  - name: subtitles
+    port: 6767
+  - name: indexer
+    port: 9696
+#  - name: lazy-librarian
+#    port: 5299
+  - name: movies
+    port: 7878
+  - name: music
+    port: 8686
+  - name: tv
+    port: 8989

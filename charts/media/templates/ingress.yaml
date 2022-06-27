@@ -1,20 +1,27 @@
 {{- if .Values.ingressEnabled }}
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+kind: Ingress
+apiVersion: networking.k8s.io/v1
 metadata:
-  name: {{ .Release.Name }}-ingress
-  namespace: traefik
+  name: {{ .Values.serviceName }}
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    cert-manager.io/cluster-issuer: {{ .Values.clusterIssuerName }}
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure,traefik
 spec:
-  entryPoints:
-    - traefik
-    - web
-  routes:
-    - match: PathPrefix(`/{{ .Release.Name }}`)
-      kind: Rule
-      services:
-        - name: {{ include "media.fullname" . }}
-          namespace: {{ .Release.Namespace }}
-          {{- range .Values.servicePorts }}
-          port: {{ .targetPort }}
-          {{- end }}
+  tls:
+    - hosts:
+        - {{ .Values.serviceName }}.{{ .Values.domain }}
+      secretName: {{ .Values.serviceName }}-tls
+  rules:
+    - host: {{ .Values.ingressHost }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "media.fullname" . }}
+                port:
+                  number: {{ .Values.servicePort }}
 {{ end }}

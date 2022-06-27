@@ -9,8 +9,6 @@ servicePorts:
     targetPort: 8081
 image:
   repository: lscr.io/linuxserver/calibre
-  tag: "v5.43.0-ls165"
-  pullPolicy: IfNotPresent
+  tag: latest
   replicaCount: 1
-
-serviceIP:
+ingressEnabled: false

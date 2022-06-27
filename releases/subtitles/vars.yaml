@@ -10,4 +10,4 @@ image:
   pullPolicy: IfNotPresent
   tag: "v1.0.4-ls155"
 
-ingressEnabled: true
+ingressPort: 6767

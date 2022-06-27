@@ -6,7 +6,4 @@ servicePorts:
 replicaCount: 1
 image:
   repository: lscr.io/linuxserver/prowlarr
-  pullPolicy: IfNotPresent
   tag: develop
-
-ingressEnabled: true

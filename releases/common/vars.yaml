@@ -3,7 +3,12 @@ nfs:
     - "nfsvers=4.1"
 
 ingressEnabled: false
+hostNetwork: true
 serviceType: LoadBalancer
+clusterIssuerName: "zerossl-prod"
+domain: home.tayarani.net
+image:
+  pullPolicy: Always
 
 commonEnv:
   PGID: !!str 100
