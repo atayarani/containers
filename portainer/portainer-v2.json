@@ -54,16 +54,16 @@
       "env": [
         {
           "default": "1026",
-          "label": "PUID",
-          "name": "User ID"
+          "label": "User ID",
+          "name": "PUID"
         },
         {
           "default": "100",
-          "label": "PGID",
-          "name": "Group ID"
+          "label": "Group ID",
+          "name": "PGID"
         },
         {
-          "default": "Etc/utc",
+          "default": "Etc/UTC",
           "label": "Time Zone",
           "name": "TZ"
         }
@@ -72,26 +72,12 @@
       "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/jellyfin.png",
       "name": "jellyfin",
       "platform": "linux",
-      "network": "host",
-      "ports": [
-        "8096:8096/tcp",
-        "8920:8920/tcp",
-        "7359:7359/udp",
-        "1900:1900/udp"
-      ],
-      "restart_policy": "unless-stopped",
       "title": "Jellyfin",
-      "type": 1,
-      "volumes": [
-        {
-          "bind": "/volume1/docker/config/",
-          "container": "/config"
-        },
-        {
-          "bind": "/volume1/docker/media/",
-          "container": "/data"
-        }
-      ]
+      "type": 3,
+      "repository": {
+        "stackfile": "portainer/compose/jellyfin.yaml",
+        "url": "https://github.com/chronoserrano/helm"
+      }
     },
     {
       "categories": [
