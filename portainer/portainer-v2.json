@@ -3,6 +3,48 @@
   "templates": [
     {
       "categories": [
+        "Tools",
+        "Web",
+        "Other"
+      ],
+      "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
+      "env": [
+        {
+          "default": "1026",
+          "label": "PUID",
+          "name": "User ID"
+        },
+        {
+          "default": "100",
+          "label": "PGID",
+          "name": "Group ID"
+        },
+        {
+          "default": "Etc/utc",
+          "label": "Time Zone",
+          "name": "TZ"
+        }
+      ],
+      "image": "lscr.io/linuxserver/heimdall:latest",
+      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/heimdall-icon.png",
+      "name": "heimdall",
+      "platform": "linux",
+      "ports": [
+        "8280:80/tcp",
+        "443/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Heimdall",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/volume1/docker/config/heimdall",
+          "container": "/config"
+        }
+      ]
+    },
+    {
+      "categories": [
         "Video",
         "Music",
         "Photos"
