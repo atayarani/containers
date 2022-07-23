@@ -120,7 +120,11 @@
       "name": "transmission",
       "platform": "linux",
       "title": "Transmission",
-      "type": 3
+      "type": 3,
+      "repository": {
+        "stackfile": "portainer/compose/transmission.yml",
+        "url": "https://github.com/chronoserrano/helm"
+      }
     }
   ]
 }
