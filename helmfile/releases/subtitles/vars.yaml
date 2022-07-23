@@ -1,0 +1,11 @@
+servicePorts:
+  - name: http
+    protocol: TCP
+    port: 6767
+    targetPort: 6767
+
+image:
+  repository: lscr.io/linuxserver/bazarr
+  tag: 1.1.0
+
+ingressPort: 6767

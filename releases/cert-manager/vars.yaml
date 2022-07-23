@@ -1,7 +1,0 @@
-installCRDs: true
-
-prometheus:
-  enabled: false
-
-rbac:
-  create: false

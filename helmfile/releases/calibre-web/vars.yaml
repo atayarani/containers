@@ -1,0 +1,13 @@
+servicePorts:
+  - name: http
+    protocol: TCP
+    port: 8083
+    targetPort: 8083
+
+image:
+  repository: lscr.io/linuxserver/calibre-web
+  tag: 0.6.18
+
+appEnv:
+  DOCKER_MODS: linuxserver/calibre-web:calibre
+  OAUTHLIB_RELAX_TOKEN_SCOPE: "1"

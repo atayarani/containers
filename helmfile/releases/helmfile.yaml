@@ -1,0 +1,34 @@
+repositories:
+  - name: jetstack
+    url: https://charts.jetstack.io
+
+templates:
+  default: &default
+    namespace: media
+    createNamespace: true
+    chart: ../charts/media
+    values:
+      - common/vars.yaml
+      - common/encrypted.yaml
+      - ./{{`{{ .Release.Name }}`}}/vars.yaml
+      - ./{{`{{ .Release.Name }}`}}/encrypted.yaml
+
+releases:
+  - name: calibre
+    <<: *default
+  - name: indexer
+    <<: *default
+  - name: movies
+    <<: *default
+  - name: subtitles
+    <<: *default
+  - name: music
+    <<: *default
+  - name: tv
+    <<: *default
+  - name: books
+    <<: *default
+  - name: calibre-web
+    <<: *default
+#  - name: freshrss
+#    <<: *default

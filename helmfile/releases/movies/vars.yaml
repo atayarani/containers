@@ -1,0 +1,9 @@
+servicePorts:
+  - name: http
+    protocol: TCP
+    port: 7878
+    targetPort: 7878
+
+image:
+  repository: lscr.io/linuxserver/radarr
+  tag: 4.1.0

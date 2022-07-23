@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "media.fullname" . }}
+  labels:
+    {{- include "media.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      {{- include "media.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "media.selectorLabels" . | nindent 8 }}
+    spec:
+      hostNetwork: {{ .Values.hostNetwork }}
+      containers:
+        - name: {{ .Chart.Name }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "media.fullname" . }}
+          {{- with .Values.image }}
+          image: "{{ .repository }}:{{ .tag | default $.Chart.AppVersion }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{ end -}}
+          {{- if not .Values.hostNetwork }}
+          ports:
+          {{- range .Values.servicePorts }}
+            - containerPort: {{ .targetPort -}}
+          {{ end }}
+          {{- end }}
+          volumeMounts:
+            {{- range .Values.volumes }}
+            {{- if hasKey . "name"}}
+            - name: "{{ .name }}"
+              mountPath: "{{ .mountPath }}"
+            {{- end }}
+            {{- end }}
+      restartPolicy: Always
+      volumes:
+        {{- range .Values.volumes }}
+        {{- if hasKey . "name"}}
+        - name: "{{ .name }}"
+          persistentVolumeClaim:
+            claimName: "{{ .name }}"
+        {{- end }}
+        {{- end }}

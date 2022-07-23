@@ -1,0 +1,25 @@
+servicePorts:
+  - name: http
+    protocol: TCP
+    port: 8085
+    targetPort: 80
+
+image:
+  repository: lscr.io/linuxserver/freshrss
+  tag: 1.19.2
+
+#---
+#version: "2.1"
+#services:
+#  freshrss:
+#    image: :
+#    container_name: freshrss
+#    environment:
+#      - PUID=1000
+#      - PGID=1000
+#      - TZ=Europe/London
+#    volumes:
+#      - /path/to/data:/config
+#    ports:
+#      - 80:80
+#    restart: unless-stopped

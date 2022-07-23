@@ -1,9 +1,0 @@
-servicePorts:
-  - name: http
-    protocol: TCP
-    port: 9696
-    targetPort: 9696
-replicaCount: 1
-image:
-  repository: lscr.io/linuxserver/prowlarr
-  tag: develop

@@ -1,0 +1,17 @@
+nfs:
+  mountOptions:
+    - "nfsvers=4.1"
+
+ingressEnabled: false
+hostNetwork: true
+serviceType: LoadBalancer
+
+image:
+  pullPolicy: Always
+
+replicaCount: 1
+
+commonEnv:
+  PGID: !!str 100
+  PUID: !!str 1026
+  TZ: "Etc/UTC"

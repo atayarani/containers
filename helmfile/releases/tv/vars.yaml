@@ -1,0 +1,10 @@
+servicePorts:
+  - name: http
+    protocol: TCP
+    port: 8989
+    targetPort: 8989
+
+image:
+  repository: lscr.io/linuxserver/sonarr
+  tag: 3.0.8
+
