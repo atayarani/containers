@@ -100,7 +100,7 @@
       "description": "Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.",
       "env": [
         {
-          "default": "1026",
+          "default": "1000",
           "label": "PUID",
           "name": "User ID"
         },
@@ -110,7 +110,7 @@
           "name": "Group ID"
         },
         {
-          "default": "Etc/utc",
+          "default": "Etc/UTC",
           "label": "Time Zone",
           "name": "TZ"
         }
@@ -119,25 +119,8 @@
       "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/transmission.png",
       "name": "transmission",
       "platform": "linux",
-      "network": "host",
-      "ports": [
-        "9091:9091/tcp",
-        "51413:51413/tcp",
-        "51413:51413/udp"
-      ],
-      "restart_policy": "unless-stopped",
       "title": "Transmission",
-      "type": 1,
-      "volumes": [
-        {
-          "bind": "/volume1/docker/config/transmission/",
-          "container": "/config"
-        },
-        {
-          "bind": "/volume1/docker/media/downloads/torrents/",
-          "container": "/downloads"
-        }
-      ]
+      "type": 3
     }
   ]
 }

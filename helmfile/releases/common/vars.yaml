@@ -14,4 +14,4 @@ replicaCount: 1
 commonEnv:
   PGID: !!str 100
   PUID: !!str 1026
-  TZ: "Etc/UTC"
+  TZ: "America/Los_Angeles"

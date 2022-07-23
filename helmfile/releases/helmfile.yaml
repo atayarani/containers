@@ -6,7 +6,7 @@ templates:
   default: &default
     namespace: media
     createNamespace: true
-    chart: ../charts/media
+    chart: ../../helm/charts/media
     values:
       - common/vars.yaml
       - common/encrypted.yaml
