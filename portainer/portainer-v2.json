@@ -111,8 +111,8 @@
         },
         {
           "default": "Etc/UTC",
-          "label": "TZ",
-          "name": "Time Zone"
+          "label": "Time Zone",
+          "name": "TZ"
         }
       ],
       "image": "lscr.io/linuxserver/transmission:latest",
