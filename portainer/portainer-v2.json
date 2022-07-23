@@ -76,7 +76,7 @@
       "type": 3,
       "repository": {
         "stackfile": "portainer/compose/jellyfin.yaml",
-        "url": "https://github.com/chronoserrano/helm"
+        "url": "https://github.com/chronoserrano/containers"
       }
     },
     {
@@ -109,7 +109,7 @@
       "type": 3,
       "repository": {
         "stackfile": "portainer/compose/transmission.yaml",
-        "url": "https://github.com/chronoserrano/helm"
+        "url": "https://github.com/chronoserrano/containers"
       }
     }
   ]
