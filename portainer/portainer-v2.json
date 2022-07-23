@@ -101,18 +101,18 @@
       "env": [
         {
           "default": "1000",
-          "label": "PUID",
-          "name": "User ID"
+          "label": "User ID",
+          "name": "PUID"
         },
         {
           "default": "100",
-          "label": "PGID",
-          "name": "Group ID"
+          "label": "Group ID",
+          "name": "PGID"
         },
         {
           "default": "Etc/UTC",
-          "label": "Time Zone",
-          "name": "TZ"
+          "label": "TZ",
+          "name": "Time Zone"
         }
       ],
       "image": "lscr.io/linuxserver/transmission:latest",
