@@ -29,6 +29,7 @@
       "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/heimdall-light.png",
       "name": "heimdall",
       "platform": "linux",
+      "network": "bridge",
       "ports": [
         "8280:80/tcp",
         "443/tcp"
@@ -71,6 +72,7 @@
       "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/jellyfin.png",
       "name": "jellyfin",
       "platform": "linux",
+      "network": "host",
       "ports": [
         "8096:8096/tcp",
         "8920:8920/tcp",
@@ -117,6 +119,7 @@
       "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/transmission.png",
       "name": "transmission",
       "platform": "linux",
+      "network": "host",
       "ports": [
         "9091:9091/tcp",
         "51413:51413/tcp",
