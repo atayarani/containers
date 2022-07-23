@@ -26,7 +26,7 @@
         }
       ],
       "image": "lscr.io/linuxserver/heimdall:latest",
-      "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/heimdall-icon.png",
+      "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/heimdall-light.png",
       "name": "heimdall",
       "platform": "linux",
       "ports": [
@@ -68,7 +68,7 @@
         }
       ],
       "image": "lscr.io/linuxserver/jellyfin:latest",
-      "logo": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jellyfin.svg",
+      "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/jellyfin.png",
       "name": "jellyfin",
       "platform": "linux",
       "ports": [
