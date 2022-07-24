@@ -104,6 +104,38 @@
         "stackfile": "portainer/compose/transmission.yaml",
         "url": "https://github.com/chronoserrano/containers"
       }
+    },
+    {
+      "type": 3,
+      "logo": "https://raw.githubusercontent.com/ChronoSerrano/containers/main/portainer/images/calibre.png",
+      "name": "calibre",
+      "platform": "linux",
+      "title": "Calibre",
+      "description": "Calibre",
+      "categories": [
+        "Books"
+      ],
+      "env": [
+        {
+          "default": "1000",
+          "label": "User ID",
+          "name": "PUID"
+        },
+        {
+          "default": "100",
+          "label": "Group ID",
+          "name": "PGID"
+        },
+        {
+          "default": "Etc/UTC",
+          "label": "Time Zone",
+          "name": "TZ"
+        }
+      ],
+      "repository": {
+        "stackfile": "portainer/compose/calibre.yaml",
+        "url": "https://github.com/chronoserrano/containers"
+      }
     }
   ]
 }

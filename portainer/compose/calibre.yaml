@@ -1,0 +1,16 @@
+---
+version: "3"
+services:
+  calibre:
+    image: lscr.io/linuxserver/calibre:latest
+    container_name: calibre
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /volume1/docker/config/calibre:/config
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    restart: unless-stopped
