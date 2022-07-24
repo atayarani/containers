@@ -26,12 +26,16 @@
         }
       ],
       "image": "lscr.io/linuxserver/heimdall:latest",
-      "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/heimdall-light.png",
+      "logo": "https://raw.githubusercontent.com/ChronoSerrano/containers/main/portainer/images/heimdall-light.png",
       "name": "heimdall",
       "platform": "linux",
       "restart_policy": "unless-stopped",
       "title": "Heimdall",
-      "type": 3
+      "type": 3,
+      "repository": {
+        "stackfile": "portainer/compose/heimdall.yaml",
+        "url": "https://github.com/chronoserrano/containers"
+      }
     },
     {
       "categories": [
@@ -58,7 +62,7 @@
         }
       ],
       "image": "lscr.io/linuxserver/jellyfin:latest",
-      "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/jellyfin.png",
+      "logo": "https://raw.githubusercontent.com/ChronoSerrano/containers/main/portainer/images/jellyfin.png",
       "name": "jellyfin",
       "platform": "linux",
       "title": "Jellyfin",
@@ -91,7 +95,7 @@
         }
       ],
       "image": "lscr.io/linuxserver/transmission:latest",
-      "logo": "https://raw.githubusercontent.com/walkxhub/dashboard-icons/master/png/transmission.png",
+      "logo": "https://raw.githubusercontent.com/ChronoSerrano/containers/main/portainer/images/transmission.png",
       "name": "transmission",
       "platform": "linux",
       "title": "Transmission",
