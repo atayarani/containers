@@ -12,5 +12,4 @@ services:
       - /volume1/docker/config/heimdall:/config
     ports:
       - "8280:80"
-      - "443:443"
     restart: unless-stopped
