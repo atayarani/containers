@@ -14,8 +14,8 @@ templates:
       - ./{{`{{ .Release.Name }}`}}/encrypted.yaml
 
 releases:
-  - name: calibre
-    <<: *default
+#  - name: calibre
+#    <<: *default
   - name: indexer
     <<: *default
   - name: movies
